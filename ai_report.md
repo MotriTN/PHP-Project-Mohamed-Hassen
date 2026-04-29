@@ -3,7 +3,7 @@
 ![Démonstration Vidéo du Site](/C:/Users/Mohamed%20Trigui/.gemini/antigravity/brain/515864f4-f673-4799-a660-0fd6499479cb/cart_demo_1777492718000.webp)
 
 **Project:** E-commerce Nexus (Tunisian Market)  
-**Student(s):** Mohamed Trigui  
+**Student(s):** Mohamed Trigui  , Hassen Chaari
 
 > **How to use this document**  
 > 1. Each time you ask the AI for help, **immediately copy/paste** the exchange into the table.  
