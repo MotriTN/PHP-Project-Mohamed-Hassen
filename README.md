@@ -18,9 +18,11 @@ Ajout dynamique de produits au panier et affichage sécurisé côté serveur.
 
 ### 3. Authentification et Espace Administrateur
 Connexion sécurisée (`admin@nexus.com` / `admin`) permettant l'accès au tableau de bord pour la gestion du stock.
+![Admin Demo](./image4.png)
 ![Admin Demo](./image1.png)
 ![Admin Demo](./image2.png)
 ![Admin Demo](./image3.png)
+
 
 ---
 
