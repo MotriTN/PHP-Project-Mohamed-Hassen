@@ -63,7 +63,7 @@ class CartController extends BaseController
         }
         
         // Redirect back to home or to cart
-        $this->redirect('/projet2/Public/index.php/cart/index');
+        $this->redirect(BASE_URL . '/index.php/cart/index');
     }
 
     /**
@@ -77,7 +77,7 @@ class CartController extends BaseController
             unset($_SESSION['cart'][$productId]);
         }
         
-        $this->redirect('/projet2/Public/index.php/cart/index');
+        $this->redirect(BASE_URL . '/index.php/cart/index');
     }
 
     /**
@@ -88,7 +88,7 @@ class CartController extends BaseController
         // In a full implementation, this would insert into `orders` and `order_items` tables
         // For now, we just clear the cart and show a success message.
         $_SESSION['cart'] = [];
-        echo "<h2>Order placed successfully!</h2><p><a href='/projet2/Public/index.php'>Return to store</a></p>";
+        echo "<h2>Order placed successfully!</h2><p><a href=BASE_URL . '/index.php'>Return to store</a></p>";
         exit;
     }
 }

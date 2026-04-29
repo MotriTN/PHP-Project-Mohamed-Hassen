@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($title ?? 'Sign In') ?></title>
-    <link rel="stylesheet" href="/projet2/Public/assets/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
     <style>
         .auth-container {
             max-width: 400px;
@@ -41,7 +41,7 @@
 </head>
 <body>
     <header class="site-header">
-        <a href="/projet2/Public/index.php" class="brand-logo">NEXUS <span>.</span></a>
+        <a href="<?= BASE_URL ?>/index.php" class="brand-logo">NEXUS <span>.</span></a>
     </header>
 
     <main class="container">
@@ -52,7 +52,7 @@
                 <div class="error-message"><?= htmlspecialchars($error) ?></div>
             <?php endif; ?>
 
-            <form action="/projet2/Public/index.php/auth/login" method="POST">
+            <form action="<?= BASE_URL ?>/index.php/auth/login" method="POST">
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" class="form-control" required autofocus>

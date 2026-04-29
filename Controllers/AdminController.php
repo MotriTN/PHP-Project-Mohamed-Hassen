@@ -11,7 +11,7 @@ class AdminController extends BaseController
         // Enforce Authentication
         if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
             // Redirect non-admins to login
-            $this->redirect('/projet2/Public/index.php/auth/login');
+            $this->redirect(BASE_URL . '/index.php/auth/login');
         }
 
         $this->productManager = new ProductManager();
@@ -64,7 +64,7 @@ class AdminController extends BaseController
             }
 
             $this->productManager->create($product);
-            $this->redirect('/projet2/Public/index.php/admin/index');
+            $this->redirect(BASE_URL . '/index.php/admin/index');
         }
     }
 
@@ -114,7 +114,7 @@ class AdminController extends BaseController
             }
 
             $this->productManager->update($product);
-            $this->redirect('/projet2/Public/index.php/admin/index');
+            $this->redirect(BASE_URL . '/index.php/admin/index');
         }
     }
 
@@ -127,6 +127,6 @@ class AdminController extends BaseController
         if ($id > 0) {
             $this->productManager->delete($id);
         }
-        $this->redirect('/projet2/Public/index.php/admin/index');
+        $this->redirect(BASE_URL . '/index.php/admin/index');
     }
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($title ?? 'Admin Dashboard') ?></title>
-    <link rel="stylesheet" href="/projet2/Public/assets/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
     <style>
         .admin-table {
             width: 100%;
@@ -25,11 +25,11 @@
 </head>
 <body>
     <header class="site-header">
-        <a href="/projet2/Public/index.php" class="brand-logo">NEXUS <span>ADMIN</span></a>
+        <a href="<?= BASE_URL ?>/index.php" class="brand-logo">NEXUS <span>ADMIN</span></a>
         <nav>
             <ul class="nav-links">
-                <li><a href="/projet2/Public/index.php">View Store</a></li>
-                <li><a href="/projet2/Public/index.php/auth/logout">Logout (<?= htmlspecialchars($_SESSION['username']) ?>)</a></li>
+                <li><a href="<?= BASE_URL ?>/index.php">View Store</a></li>
+                <li><a href="<?= BASE_URL ?>/index.php/auth/logout">Logout (<?= htmlspecialchars($_SESSION['username']) ?>)</a></li>
             </ul>
         </nav>
     </header>
@@ -37,7 +37,7 @@
     <main class="container">
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <h2>Product Management</h2>
-            <a href="/projet2/Public/index.php/admin/create" class="btn btn-primary btn-sm">+ Add Product</a>
+            <a href="<?= BASE_URL ?>/index.php/admin/create" class="btn btn-primary btn-sm">+ Add Product</a>
         </div>
 
         <table class="admin-table">
@@ -66,8 +66,8 @@
                     <td><?= number_format($product->getPrice(), 2) ?> TND</td>
                     <td><?= $product->getStock() ?></td>
                     <td>
-                        <a href="/projet2/Public/index.php/admin/edit?id=<?= $product->getId() ?>" class="action-btn">Edit</a>
-                        <a href="/projet2/Public/index.php/admin/delete?id=<?= $product->getId() ?>" class="action-btn action-delete" onclick="return confirm('Are you sure?')">Delete</a>
+                        <a href="<?= BASE_URL ?>/index.php/admin/edit?id=<?= $product->getId() ?>" class="action-btn">Edit</a>
+                        <a href="<?= BASE_URL ?>/index.php/admin/delete?id=<?= $product->getId() ?>" class="action-btn action-delete" onclick="return confirm('Are you sure?')">Delete</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

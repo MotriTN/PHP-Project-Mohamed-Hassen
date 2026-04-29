@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($title ?? 'Your Cart') ?></title>
-    <link rel="stylesheet" href="/projet2/Public/assets/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
     <style>
         .cart-container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
         .cart-table { width: 100%; border-collapse: collapse; background: var(--bg-card); margin-bottom: 2rem; border-radius: 8px; overflow: hidden; }
@@ -17,10 +17,10 @@
 </head>
 <body>
     <header class="site-header">
-        <a href="/projet2/Public/index.php" class="brand-logo">NEXUS <span>.</span></a>
+        <a href="<?= BASE_URL ?>/index.php" class="brand-logo">NEXUS <span>.</span></a>
         <nav>
             <ul class="nav-links">
-                <li><a href="/projet2/Public/index.php">Continue Shopping</a></li>
+                <li><a href="<?= BASE_URL ?>/index.php">Continue Shopping</a></li>
             </ul>
         </nav>
     </header>
@@ -31,7 +31,7 @@
         <?php if (empty($cartItems)): ?>
             <div style="text-align: center; padding: 5rem; background: var(--bg-card); border-radius: 8px;">
                 <h2 style="color: var(--text-muted); margin-bottom: 1rem;">Your cart is empty.</h2>
-                <a href="/projet2/Public/index.php" class="btn btn-primary">Discover Gear</a>
+                <a href="<?= BASE_URL ?>/index.php" class="btn btn-primary">Discover Gear</a>
             </div>
         <?php else: ?>
             <table class="cart-table">
@@ -52,7 +52,7 @@
                             <td><?= $item['quantity'] ?></td>
                             <td style="color: var(--accent-neon); font-weight: 600;"><?= number_format($item['subtotal'], 2) ?> TND</td>
                             <td>
-                                <a href="/projet2/Public/index.php/cart/remove?id=<?= $item['product']->getId() ?>" class="remove-btn">Remove</a>
+                                <a href="<?= BASE_URL ?>/index.php/cart/remove?id=<?= $item['product']->getId() ?>" class="remove-btn">Remove</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -62,7 +62,7 @@
             <div class="cart-total">
                 <div>Total:</div>
                 <span><?= number_format($totalAmount, 2) ?> TND</span>
-                <a href="/projet2/Public/index.php/cart/checkout" class="btn btn-primary" style="margin-left: 2rem;">Secure Checkout</a>
+                <a href="<?= BASE_URL ?>/index.php/cart/checkout" class="btn btn-primary" style="margin-left: 2rem;">Secure Checkout</a>
             </div>
         <?php endif; ?>
     </main>

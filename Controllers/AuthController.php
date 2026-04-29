@@ -18,7 +18,7 @@ class AuthController extends BaseController
     {
         // If already logged in, redirect to home or dashboard
         if (isset($_SESSION['user_id'])) {
-            $this->redirect('/projet2/Public/index.php');
+            $this->redirect(BASE_URL . '/index.php');
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -40,9 +40,9 @@ class AuthController extends BaseController
 
                 // Redirect to admin if admin, else home
                 if ($user->getRole() === 'admin') {
-                    $this->redirect('/projet2/Public/index.php/admin/index');
+                    $this->redirect(BASE_URL . '/index.php/admin/index');
                 } else {
-                    $this->redirect('/projet2/Public/index.php');
+                    $this->redirect(BASE_URL . '/index.php');
                 }
             } else {
                 // Generic error message for security
@@ -72,6 +72,6 @@ class AuthController extends BaseController
         }
 
         session_destroy();
-        $this->redirect('/projet2/Public/index.php');
+        $this->redirect(BASE_URL . '/index.php');
     }
 }

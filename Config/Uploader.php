@@ -78,6 +78,6 @@ class Uploader
         }
 
         // Return relative path for the database and views
-        return '/projet2/Public/uploads/' . $filename;
+        return BASE_URL . '/uploads/' . $filename;
     }
 }

@@ -16,6 +16,10 @@ define('CONTROLLERS_PATH', BASE_PATH . '/Controllers');
 define('MODELS_PATH', BASE_PATH . '/Models');
 define('VIEWS_PATH', BASE_PATH . '/Views');
 
+// Define dynamic BASE_URL for completely portable routing
+$base_url = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
+define('BASE_URL', $base_url === '/' ? '' : $base_url);
+
 // Simple Autoloader (can be replaced by Composer later if needed, but strict constraint says no Composer)
 spl_autoload_register(function ($class_name) {
     // Check Controllers

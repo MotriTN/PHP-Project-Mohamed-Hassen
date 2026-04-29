@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($title ?? 'Product Form') ?></title>
-    <link rel="stylesheet" href="/projet2/Public/assets/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
     <style>
         .form-container {
             max-width: 600px;
@@ -26,7 +26,7 @@
 </head>
 <body>
     <header class="site-header">
-        <a href="/projet2/Public/index.php/admin/index" class="brand-logo">NEXUS <span>ADMIN</span></a>
+        <a href="<?= BASE_URL ?>/index.php/admin/index" class="brand-logo">NEXUS <span>ADMIN</span></a>
     </header>
 
     <main class="container">
@@ -35,7 +35,7 @@
             
             <?php $isEdit = $product->getId() !== null; ?>
             
-            <form action="/projet2/Public/index.php/admin/<?= $isEdit ? 'update' : 'store' ?>" method="POST" enctype="multipart/form-data">
+            <form action="<?= BASE_URL ?>/index.php/admin/<?= $isEdit ? 'update' : 'store' ?>" method="POST" enctype="multipart/form-data">
                 <?php if ($isEdit): ?>
                     <input type="hidden" name="id" value="<?= $product->getId() ?>">
                 <?php endif; ?>
@@ -71,7 +71,7 @@
 
                 <div style="display: flex; gap: 1rem; margin-top: 2rem;">
                     <button type="submit" class="btn btn-primary" style="flex: 1;">Save Product</button>
-                    <a href="/projet2/Public/index.php/admin/index" class="btn" style="flex: 1; text-align: center; border: 1px solid var(--text-muted); color: var(--text-muted);">Cancel</a>
+                    <a href="<?= BASE_URL ?>/index.php/admin/index" class="btn" style="flex: 1; text-align: center; border: 1px solid var(--text-muted); color: var(--text-muted);">Cancel</a>
                 </div>
             </form>
         </div>
