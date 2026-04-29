@@ -1,20 +1,17 @@
 # Nexus E-Commerce Platform
 
+📖 **[Lien vers le Rapport d'Utilisation de l'IA (AI Report)](./ai_report.md)**
+
 **Nexus** is a premium, high-ticket e-commerce platform built strictly in **Vanilla PHP 8+** using the **MVC** design pattern, **POO**, and **PDO**. It features a custom Dark Mode/Neon design system without relying on external CSS frameworks.
 
-## 🎥 Démos Vidéo
+## 🎥 Démonstration Complète du Projet
 
-### 1. Moteur de Recherche Dynamique
-Recherche multicritères via requêtes SQL préparées (`LIKE`).
-![Search Demo](./search_demo.webp)
+Voici une démonstration complète incluant :
+1. La **Recherche multicritères** (requêtes SQL préparées `LIKE`).
+2. L'**Authentification** sécurisée et l'Espace Administrateur.
+3. Le **Panier d'Achat** fonctionnel (Shopping Cart dynamique).
 
-### 2. Espace Administrateur (CRUD)
-Connexion sécurisée et gestion complète du catalogue (Ajout, Modification, Suppression, Upload d'images).
-![Admin Dashboard Demo](./admin_demo.webp)
-
-### 3. Panier d'Achat (Shopping Cart)
-Gestion des variables de session (`$_SESSION['cart']`) et calcul dynamique en TND.
-![Shopping Cart Demo](./cart_demo.webp)
+![Full Project Demo](./full_demo.webp)
 
 ---
 
