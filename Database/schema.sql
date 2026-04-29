@@ -48,6 +48,9 @@ CREATE TABLE IF NOT EXISTS order_items (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Insert Mock Data for Testing
+INSERT INTO users (username, email, password_hash, role) VALUES 
+('admin', 'admin@nexus.com', '$2y$10$xrKM8eNu9PRgZOc4aJLvg.Q0ySmbhkm3Oe.kD3kRR7y/D7U2Y2pAy', 'admin');
+
 INSERT INTO products (name, description, price, image_url, stock) VALUES 
 ('Neon Keyboard', 'High-performance mechanical keyboard with RGB neon accents.', 149.99, '/assets/images/neon-keyboard.jpg', 50),
 ('Cyber Mouse', 'Precision laser mouse optimized for high-speed gaming.', 89.50, '/assets/images/cyber-mouse.jpg', 120),

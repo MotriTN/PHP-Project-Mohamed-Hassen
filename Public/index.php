@@ -51,13 +51,19 @@ spl_autoload_register(function ($class_name) {
 $request_uri = $_SERVER['REQUEST_URI'];
 $script_name = $_SERVER['SCRIPT_NAME'];
 
-// Remove script name from URI to get the relative path
+// Remove base directory from URI to get the relative path
 $base_dir = dirname($script_name);
 $path = str_replace($base_dir, '', $request_uri);
 $path = trim(parse_url($path, PHP_URL_PATH), '/');
 
+// Strip index.php from the path if it exists
+if (strpos($path, 'index.php') === 0) {
+    $path = substr($path, 9);
+    $path = trim($path, '/');
+}
+
 // Default Route
-if ($path === '' || $path === 'index.php') {
+if ($path === '') {
     $controllerName = 'HomeController';
     $action = 'index';
 } else {

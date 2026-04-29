@@ -16,9 +16,14 @@
         </a>
         <nav>
             <ul class="nav-links">
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Sign In</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <?php if ($_SESSION['role'] === 'admin'): ?>
+                        <li><a href="/projet2/Public/index.php/admin/index">Dashboard</a></li>
+                    <?php endif; ?>
+                    <li><a href="/projet2/Public/index.php/auth/logout">Logout</a></li>
+                <?php else: ?>
+                    <li><a href="/projet2/Public/index.php/auth/login">Sign In</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>
@@ -27,6 +32,13 @@
         <section class="hero">
             <h1>Upgrade Your <span>Reality</span></h1>
             <p>Discover our curated collection of elite digital gear. Engineered for performance, designed for aesthetics.</p>
+            
+            <form action="/projet2/Public/index.php" method="GET" style="margin: 2rem auto; max-width: 500px; display: flex; gap: 0.5rem;">
+                <input type="text" name="q" placeholder="Search products..." value="<?= htmlspecialchars($searchQuery ?? '') ?>" 
+                       style="flex: 1; padding: 0.8rem; border-radius: 4px; border: 1px solid var(--accent-neon); background: rgba(0,0,0,0.5); color: white;">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+            
             <a href="#products" class="btn btn-primary">Explore Gear</a>
         </section>
 
@@ -54,7 +66,7 @@
                                 
                                 <div class="product-footer">
                                     <div class="product-price"><?= number_format($product->getPrice(), 2) ?> TND</div>
-                                    <button class="btn-add">Add to Cart</button>
+                                    <a href="/projet2/Public/index.php/cart/add?id=<?= $product->getId() ?>" class="btn-add" style="text-decoration: none;">Add to Cart</a>
                                 </div>
                             </div>
                         </article>

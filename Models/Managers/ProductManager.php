@@ -111,6 +111,29 @@ class ProductManager
     }
 
     /**
+     * Search products by keyword.
+     *
+     * @param string $keyword
+     * @return Product[]
+     */
+    public function search(string $keyword): array
+    {
+        $stmt = $this->db->prepare("SELECT * FROM products WHERE name LIKE :keyword1 OR description LIKE :keyword2 ORDER BY created_at DESC");
+        $stmt->execute([
+            'keyword1' => '%' . $keyword . '%',
+            'keyword2' => '%' . $keyword . '%'
+        ]);
+        $results = $stmt->fetchAll();
+        
+        $products = [];
+        foreach ($results as $row) {
+            $products[] = $this->hydrate($row);
+        }
+        
+        return $products;
+    }
+
+    /**
      * Hydrate a Product entity from an array of data.
      *
      * @param array $data
