@@ -4,14 +4,21 @@
 
 **Nexus** is a premium, high-ticket e-commerce platform built strictly in **Vanilla PHP 8+** using the **MVC** design pattern, **POO**, and **PDO**. It features a custom Dark Mode/Neon design system without relying on external CSS frameworks.
 
-## 🎥 Démonstration Complète du Projet
+## 🎥 Démonstrations par Fonctionnalité (User Stories)
 
-Voici une démonstration complète incluant :
-1. La **Recherche multicritères** (requêtes SQL préparées `LIKE`).
-2. L'**Authentification** sécurisée et l'Espace Administrateur.
-3. Le **Panier d'Achat** fonctionnel (Shopping Cart dynamique).
+Voici les démonstrations des principales fonctionnalités requises par le cahier des charges :
 
-![Full Project Demo](./full_demo.webp)
+### 1. Recherche Multicritères (Recherche "Neon")
+Permet aux clients de rechercher un produit par mot clé. La requête utilise `LIKE` avec PDO en toute sécurité.
+![Search Demo](./demo_search.webp)
+
+### 2. Gestion du Panier d'Achat
+Ajout dynamique de produits au panier et affichage sécurisé côté serveur.
+![Cart Demo](./demo_cart.webp)
+
+### 3. Authentification et Espace Administrateur
+Connexion sécurisée (`admin@nexus.com` / `admin`) permettant l'accès au tableau de bord pour la gestion du stock.
+![Admin Demo](./demo_admin.webp)
 
 ---
 
